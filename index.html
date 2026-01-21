@@ -1,287 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Moses Akongnui — Independent Systems & Risk Advisor. Strategic clarity for complex, rule-bound environments." />
-  <title>Moses Akongnui | Systems & Risk Advisor</title>
-  <style>
-    :root{
-      --bg:#0b0f14;--card:#0f1620;--text:#e8eef6;--muted:#a9b6c6;
-      --line:#1b2633;--accent:#7dd3fc;--accent2:#a78bfa;
-      --ok:#34d399;--warn:#fbbf24;
-      --shadow:0 20px 50px rgba(0,0,0,.45);
-      --radius:18px;--radius2:12px;--max:1060px;
-      --sans:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;font-family:var(--sans);color:var(--text);
-      background:
-        radial-gradient(1000px 650px at 10% 10%,rgba(125,211,252,.10),transparent 55%),
-        radial-gradient(900px 600px at 95% 5%,rgba(167,139,250,.10),transparent 55%),
-        linear-gradient(180deg,#070a0f 0%,var(--bg) 60%);
-    }
-    a{color:inherit;text-decoration:none}
-    .wrap{max-width:var(--max);margin:0 auto;padding:28px 18px 80px}
-    .topbar{position:sticky;top:0;z-index:5;backdrop-filter:blur(10px);background:rgba(11,15,20,.80);border-bottom:1px solid rgba(27,38,51,.7)}
-    .topbar .inner{max-width:var(--max);margin:0 auto;padding:12px 18px;display:flex;gap:14px;align-items:center;justify-content:space-between}
-    .brand{display:flex;gap:10px;align-items:center}
-    .dot{width:12px;height:12px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 0 0 6px rgba(125,211,252,.08)}
-    .brand strong{letter-spacing:.3px}
-    .nav{display:flex;gap:14px;flex-wrap:wrap}
-    .nav a{color:var(--muted);font-size:14px;padding:8px 10px;border-radius:10px}
-    .nav a:hover{color:var(--text);background:rgba(255,255,255,.04)}
-    .hero{margin-top:22px;display:grid;gap:18px;grid-template-columns:1.2fr .8fr}
-    @media(max-width:860px){.hero{grid-template-columns:1fr}}
-    .card{
-      background:linear-gradient(180deg,rgba(15,22,32,.92),rgba(15,22,32,.78));
-      border:1px solid rgba(27,38,51,.9);border-radius:var(--radius);
-      padding:22px;box-shadow:var(--shadow);
-    }
-    .kicker{color:var(--muted);font-size:13px;letter-spacing:.18em;text-transform:uppercase}
-    h1{margin:10px 0 8px;font-size:40px;line-height:1.08}
-    @media(max-width:480px){h1{font-size:34px}}
-    .subtitle{color:var(--muted);font-size:16px;line-height:1.6;margin:0 0 14px}
-    .badges{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 2px}
-    .badge{font-size:13px;color:var(--muted);border:1px solid rgba(27,38,51,.9);background:rgba(255,255,255,.03);padding:8px 10px;border-radius:999px}
-    .ctaRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
-    .btn{
-      display:inline-flex;align-items:center;gap:10px;
-      border-radius:12px;padding:12px 14px;
-      border:1px solid rgba(27,38,51,.9);
-      background:rgba(255,255,255,.03);
-      color:var(--text);font-weight:600;font-size:14px;
-      transition:transform .12s ease,background .12s ease;
-    }
-    .btn.primary{background:linear-gradient(135deg,rgba(125,211,252,.18),rgba(167,139,250,.16));border-color:rgba(125,211,252,.35)}
-    .btn small{color:var(--muted);font-weight:500}
-    .btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.05)}
-    .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    @media(max-width:860px){.grid2{grid-template-columns:1fr}}
-    h2{margin:0 0 12px;font-size:20px}
-    .muted{color:var(--muted)}
-    ul{margin:10px 0 0;padding-left:18px}
-    li{margin:8px 0;color:var(--muted);line-height:1.55}
-    .pill{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);border:1px solid rgba(27,38,51,.9);background:rgba(255,255,255,.03);padding:8px 10px;border-radius:999px}
-    .pill .s{width:8px;height:8px;border-radius:50%}
-    .s.ok{background:var(--ok)}.s.warn{background:var(--warn)}
-    .section{margin-top:16px}
-    .split{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    @media(max-width:860px){.split{grid-template-columns:1fr}}
-    .mini{border-radius:var(--radius2);padding:16px;border:1px solid rgba(27,38,51,.85);background:rgba(255,255,255,.02)}
-    .mini h3{margin:0 0 8px;font-size:15px}
-    .mini p{margin:0;color:var(--muted);line-height:1.55}
-    .timeline{display:grid;gap:10px}
-    .role{display:grid;gap:6px;padding:14px;border-radius:var(--radius2);border:1px solid rgba(27,38,51,.85);background:rgba(255,255,255,.02)}
-    .role .top{display:flex;gap:10px;align-items:baseline;justify-content:space-between;flex-wrap:wrap}
-    .role strong{font-size:15px}
-    .role span{color:var(--muted);font-size:13px}
-    .role p{margin:0;color:var(--muted);line-height:1.55}
-    .footer{margin-top:26px;color:var(--muted);font-size:13px;text-align:center}
-    code.inline{background:rgba(255,255,255,.06);padding:2px 6px;border-radius:8px;border:1px solid rgba(27,38,51,.8)}
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moses Akongnui</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0d0d0d;
+            color: #f2f2f2;
+        }
+
+        .hero {
+            height: 100vh;
+            background: url('IMG_3957.jpeg') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 40px;
+            background-attachment: fixed;
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            margin: 0;
+            font-weight: 700;
+            text-shadow: 0px 0px 20px #000;
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin-top: 10px;
+            max-width: 600px;
+            text-shadow: 0px 0px 12px #000;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 14px 28px;
+            background: #ffffff22;
+            color: #fff;
+            border: 1px solid #ffffff55;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #ffffff44;
+        }
+
+        .section {
+            padding: 80px 40px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h2 {
+            font-size: 40px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 14px;
+            color: #888;
+        }
+    </style>
 </head>
+
 <body>
-  <div class="topbar">
-    <div class="inner">
-      <div class="brand">
-        <div class="dot"></div>
-        <strong>Moses Akongnui</strong>
-      </div>
-      <nav class="nav">
-        <a href="#focus">Focus</a>
-        <a href="#capabilities">Capabilities</a>
-        <a href="#offers">Offers</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
-      </nav>
+
+    <!-- HERO SECTION -->
+    <div class="hero">
+        <h1>Moses Akongnui</h1>
+        <p>Veteran · Strategist · Federal Systems Expert · Builder</p>
+        <a href="#contact" class="btn">Book a Strategy Call</a>
     </div>
-  </div>
 
-  <div class="wrap">
-    <section class="hero">
-      <div class="card">
-        <div class="kicker">Independent Systems & Risk Advisor</div>
-        <h1>Strategic clarity for complex, rule-bound environments.</h1>
-        <p class="subtitle">
-          I help professionals and organizations make clean decisions under uncertainty—reducing procedural risk,
-          improving outcomes, and preserving integrity. Calm judgment, structured thinking, and disciplined execution.
+    <!-- ABOUT SECTION -->
+    <div class="section">
+        <h2>About</h2>
+        <p>
+            I am a U.S. Army veteran, attorney, builder, and systems thinker with a deep interest
+            in human performance, federal structures, strategic autonomy, and mastery.
+            My work blends analytical rigor with intuition and lived experience.
         </p>
-        <div class="badges">
-          <div class="badge">U.S. Army Veteran (Honorable)</div>
-          <div class="badge">Attorney</div>
-          <div class="badge">Federal Realty & Leasing</div>
-          <div class="badge">Procurement / Compliance Strategy</div>
-        </div>
-        <div class="ctaRow">
-          <!-- Replace YOUR_EMAIL@example.com with your real email -->
-          <a class="btn primary" href="mailto:YOUR_EMAIL@example.com?subject=Advisory%20Inquiry%20—%20Strategic%20Clarity%20Session">
-            Request a Clarity Session <small>email</small>
-          </a>
-          <a class="btn" href="#offers">View Offers <small>scope + structure</small></a>
-          <a class="btn" href="#capabilities">Core Capabilities <small>what I do</small></a>
-        </div>
-      </div>
+    </div>
 
-      <div class="card">
-        <h2 id="focus">Focus</h2>
-        <div class="section" style="display:flex;gap:10px;flex-wrap:wrap;">
-          <div class="pill"><span class="s ok"></span>Decision architecture</div>
-          <div class="pill"><span class="s ok"></span>Risk & compliance strategy</div>
-          <div class="pill"><span class="s ok"></span>Process / SOP design</div>
-          <div class="pill"><span class="s ok"></span>Procurement & contract analysis</div>
-          <div class="pill"><span class="s ok"></span>Organizational diagnostics</div>
-          <div class="pill"><span class="s ok"></span>High-stakes stakeholder alignment</div>
-        </div>
-        <div class="section split">
-          <div class="mini">
-            <h3>Best fit clients</h3>
-            <p>Founders, executives, operators, contractors, and teams navigating complexity, governance, and procedural risk.</p>
-          </div>
-          <div class="mini">
-            <h3>Not a fit</h3>
-            <p>Politics-first cultures, performative consensus, unclear authority, or engagements that require constant availability.</p>
-          </div>
-        </div>
-        <div class="section">
-          <h2>Working style</h2>
-          <p class="muted">
-            Clear scope, structured deliverables, decisive recommendations. I don’t over-diagnose—my goal is
-            to produce a plan you can execute immediately.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="grid2" id="capabilities" style="margin-top:16px;">
-      <div class="card">
-        <h2>Core capabilities</h2>
+    <!-- SERVICES SECTION -->
+    <div class="section">
+        <h2>Consulting & Advisory</h2>
+        <p>I help individuals and organizations with:</p>
         <ul>
-          <li><strong>Strategic analysis & decision architecture</strong> — clarity under ambiguity; option design; go/no-go decisions.</li>
-          <li><strong>Systems & process design</strong> — SOPs, workflows, risk controls, governance structures.</li>
-          <li><strong>Risk assessment & compliance strategy</strong> — procedural exposure, policy gaps, mitigation planning.</li>
-          <li><strong>Contract & procurement strategy</strong> — interpretation, flow-down logic, execution risk, negotiation posture.</li>
-          <li><strong>Executive communication</strong> — translate complexity into an actionable plan for leaders and teams.</li>
+            <li>Federal procurement strategy</li>
+            <li>Immigration strategy and high-stakes case design</li>
+            <li>Systems analysis & structural problem solving</li>
+            <li>Self-directed career architecture</li>
+            <li>Masculinity, individuation & personal sovereignty coaching</li>
         </ul>
-      </div>
-      <div class="card">
-        <h2>Signature traits</h2>
-        <ul>
-          <li>High autonomy; strong internal compass; calm authority.</li>
-          <li>Systems thinker: sees constraints, incentives, and hidden risks early.</li>
-          <li>Veteran discipline: structured execution, principled decision-making.</li>
-          <li>Builder mindset: designs frameworks and can execute when needed.</li>
-        </ul>
-        <p class="muted" style="margin-top:12px;">
-          If you need someone to “work harder,” hire labor. If you need someone to <em>think clearer</em>, I’m your person.
-        </p>
-      </div>
-    </section>
+    </div>
 
-    <section class="card" id="offers" style="margin-top:16px;">
-      <h2>Engagements</h2>
-      <div class="split">
-        <div class="mini">
-          <h3>Strategic Clarity Session (60–90 min)</h3>
-          <p>One problem. One decision. One plan. You leave with a clean recommendation, next steps, and risk-aware execution guidance.</p>
-          <p class="muted" style="margin-top:10px;">Typical outputs: decision memo, option comparison, risk map, short action plan.</p>
-        </div>
-        <div class="mini">
-          <h3>Short Project (1–3 weeks)</h3>
-          <p>Process design, compliance strategy, procurement approach, contract/risk review, or operational restructuring.</p>
-          <p class="muted" style="margin-top:10px;">Structured scope, defined deliverables, fixed timeline.</p>
-        </div>
-      </div>
-      <div class="section split">
-        <div class="mini">
-          <h3>Advisory Retainer (monthly)</h3>
-          <p>Limited access, high-impact guidance. Designed for leaders who need recurring judgment without full-time overhead.</p>
-          <p class="muted" style="margin-top:10px;">Clear rules: no open-ended access, no crisis-only dependence.</p>
-        </div>
-        <div class="mini">
-          <h3>What I won’t do</h3>
-          <p>Unlimited availability, vague scope, politics-heavy internal drama, or engagements that require “pleasing” instead of clarity.</p>
-        </div>
-      </div>
-      <p class="muted" style="margin-top:14px;">
-        For pricing, email with: <code class="inline">context</code>, <code class="inline">goal</code>,
-        <code class="inline">timeline</code>, and <code class="inline">constraints</code>.
-      </p>
-    </section>
-
-    <section class="card" id="experience" style="margin-top:16px;">
-      <h2>Experience (high-signal)</h2>
-      <div class="timeline">
-        <div class="role">
-          <div class="top">
-            <strong>Realty Specialist — Veterans Health Administration (VHA)</strong>
-            <span>2024–Present</span>
-          </div>
-          <p>Federal real estate / leasing work requiring strict policy alignment, stakeholder coordination, and risk-aware execution.</p>
-        </div>
-        <div class="role">
-          <div class="top">
-            <strong>Lease Contracting Officer (Warranted) — General Services Administration (GSA)</strong>
-            <span>2016–2022</span>
-          </div>
-          <p>Negotiation, underwriting, compliance enforcement, and implementation oversight for complex federal lease actions.</p>
-        </div>
-        <div class="role">
-          <div class="top">
-            <strong>Attorney & Strategic Advisor — Independent Practice</strong>
-            <span>2021–Present</span>
-          </div>
-          <p>Regulatory navigation, strategic guidance, and decision frameworks for clients operating in complex systems.</p>
-        </div>
-        <div class="role">
-          <div class="top">
-            <strong>Document Review Attorney — Contract Roles</strong>
-            <span>2023–Present</span>
-          </div>
-          <p>High-accuracy issue spotting and analysis at scale; disciplined workflow execution under strict standards.</p>
-        </div>
-        <div class="role">
-          <div class="top">
-            <strong>U.S. Army — Honorable Discharge</strong>
-            <span>~2 years</span>
-          </div>
-          <p>Discipline, mission-focus, and principled leadership under structured command environments.</p>
-        </div>
-      </div>
-      <div class="section split">
-        <div class="mini">
-          <h3>Education</h3>
-          <p class="muted">LL.M., Texas A&amp;M University School of Law<br/>MBA, Midwestern State University</p>
-        </div>
-        <div class="mini">
-          <h3>Tools</h3>
-          <p class="muted">Microsoft Office • Relativity / Everlaw • SOP design • Systems mapping • Risk analysis</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="card" id="contact" style="margin-top:16px;">
-      <h2>Contact</h2>
-      <p class="muted">
-        If you want a clean plan, not noise, reach out with a short description of the situation and the decision you’re facing.
-      </p>
-      <div class="ctaRow">
-        <a class="btn primary" href="mailto:YOUR_EMAIL@example.com?subject=Advisory%20Inquiry%20—%20Clarity%20Session">
-          Email for Availability
-        </a>
-        <a class="btn" href="#focus">Back to top</a>
-      </div>
-      <p class="muted" style="margin-top:12px;font-size:13px;">
-        Replace <code class="inline">YOUR_EMAIL@example.com</code> with your real email address.
-      </p>
-    </section>
+    <!-- CONTACT -->
+    <div class="section" id="contact">
+        <h2>Contact</h2>
+        <p>For consulting inquiries or collaboration, email:</p>
+        <p><strong>mosesmosaic@gmail.com</strong></p>
+        <a href="mailto:mosesmosaic@gmail.com" class="btn">Send Email</a>
+    </div>
 
     <div class="footer">
-      © <span id="y"></span> Moses Akongnui. Built for clarity, not hype.
+        © 2026 Moses Akongnui. All rights reserved.
     </div>
-  </div>
 
-  <script>document.getElementById("y").textContent=new Date().getFullYear();</script>
 </body>
 </html>
